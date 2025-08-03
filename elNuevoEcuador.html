@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Botón cósmico púrpura con efectos espectaculares">
+
+    <meta property="og:url" content="https://webdisgn.github.io/aluminioYVidrio/cv/elNuevoEcuador.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Accede a una de las 80.000 plazas de empleo en Ecuador" />
+    <meta property="og:description" content="Construimos El Nuevo Ecuador" />
+    <meta property="og:image" content="https://scontent.fcue5-1.fna.fbcdn.net/v/t39.30808-6/494226223_1127772466056209_7751884372176970706_n.png?_nc_cat=105&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=eiioYLcEUa0Q7kNvwGFKGMV&_nc_oc=AdnbvYKcoidl31TafmpoNNesVnqivKl2UyYiml8l6shZKJK_pMIHVFUDcGJCNpnzhw4&_nc_zt=23&_nc_ht=scontent.fcue5-1.fna&_nc_gid=wHUFHpAxNh1AX86EcKEmYg&oh=00_AfVNFzbRuz-EFZergsHQWs83M1BxMu6y11AVMK4FlI8Osw&oe=68959103" />
+    <title>El Nuevo Ecuador</title>
+    <style>
+        :root {
+            --color-bg: #0a0a1a;
+            --color-text: #e0e0e0;
+            --color-primary: #9c27b0;
+            --color-secondary: #673ab7;
+            --color-accent: #e91e63;
+            --star-size: 2px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--color-bg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: var(--color-text);
+            overflow: hidden;
+            touch-action: manipulation;
+            position: relative;
+        }
+
+        /* Fondo espacial mejorado */
+        .space-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle var(--duration, 5s) infinite ease-in-out;
+            opacity: var(--opacity, 0.8);
+            width: var(--star-size);
+            height: var(--star-size);
+        }
+
+        @keyframes twinkle {
+
+            0%,
+            100% {
+                opacity: 0.2;
+                transform: scale(0.8);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scale(1.2);
+            }
+        }
+
+        .nebula {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(40px);
+            opacity: 0.3;
+            animation: nebula-move 60s infinite linear;
+        }
+
+        @keyframes nebula-move {
+            0% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+
+            100% {
+                transform: translate(100px, 50px) rotate(360deg);
+            }
+        }
+
+        .comet {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(156, 39, 176, 0.8));
+            border-radius: 50%;
+            filter: blur(1px);
+            animation: comet-flight 20s linear infinite;
+            opacity: 0;
+        }
+
+        @keyframes comet-flight {
+            0% {
+                transform: translate(-100px, -100px) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translate(calc(100vw + 100px), calc(100vh + 100px)) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        /* Contenedor mejorado */
+        .container {
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            z-index: 10;
+            backdrop-filter: blur(10px);
+            background: rgba(10, 10, 26, 0.6);
+            border-radius: 20px;
+            border: 1px solid rgba(156, 39, 176, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5),
+                inset 0 0 20px rgba(156, 39, 176, 0.2);
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(90deg, var(--color-primary), var(--color-secondary), var(--color-accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 10px rgba(156, 39, 176, 0.3);
+            animation: titleGlow 4s ease infinite;
+        }
+
+        @keyframes titleGlow {
+
+            0%,
+            100% {
+                text-shadow: 0 0 10px rgba(156, 39, 176, 0.3);
+            }
+
+            50% {
+                text-shadow: 0 0 20px rgba(103, 58, 183, 0.6);
+            }
+        }
+
+        p {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            line-height: 1.6;
+            text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Botón super mejorado */
+        .cosmic-btn {
+            position: relative;
+            display: inline-block;
+            padding: 1.2rem 2.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            overflow: hidden;
+            z-index: 1;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5),
+                0 0 0 2px rgba(156, 39, 176, 0.3),
+                0 0 30px rgba(156, 39, 176, 0.4),
+                inset 0 0 10px rgba(255, 255, 255, 0.1);
+            background: linear-gradient(145deg, var(--color-primary), var(--color-secondary), var(--color-accent));
+            background-size: 300% 300%;
+            animation: gradientBG 4s ease infinite, pulse 2s ease infinite, float 6s ease-in-out infinite;
+            transform: translateZ(0);
+            will-change: transform, box-shadow, background;
+            transition: all 0.3s ease;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0) rotateX(0deg) rotateY(0deg);
+            }
+
+            50% {
+                transform: translateY(-10px) rotateX(5deg) rotateY(5deg);
+            }
+        }
+
+        .cosmic-btn:active {
+            transform: scale(0.98) translateZ(0);
+            animation: gradientBG 4s ease infinite, pulseActive 0.3s ease;
+        }
+
+        .particles-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translateZ(0);
+            filter: drop-shadow(0 0 5px currentColor);
+        }
+
+        .btn-text {
+            position: relative;
+            z-index: 2;
+            display: inline-block;
+            animation: textGlow 3s ease infinite;
+        }
+
+        @keyframes textGlow {
+
+            0%,
+            100% {
+                text-shadow: 0 0 5px rgba(156, 39, 176, 0.7),
+                    0 0 10px rgba(103, 58, 183, 0.5);
+            }
+
+            50% {
+                text-shadow: 0 0 15px rgba(233, 30, 99, 0.9),
+                    0 0 20px rgba(156, 39, 176, 0.7);
+            }
+        }
+
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: scale(0);
+            animation: ripple 4s ease-out infinite;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Nuevos efectos */
+        .energy-pulse {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            border-radius: 50px;
+            border: 2px solid transparent;
+            animation: energyPulse 3s linear infinite;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        @keyframes energyPulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.8;
+                border-color: var(--color-primary);
+            }
+
+            100% {
+                transform: scale(1.2);
+                opacity: 0;
+                border-color: var(--color-accent);
+            }
+        }
+
+        .constellation {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background-image:
+                radial-gradient(circle at 20% 30%, rgba(156, 39, 176, 0.3) 1px, transparent 1px),
+                radial-gradient(circle at 80% 70%, rgba(103, 58, 183, 0.3) 1px, transparent 1px),
+                radial-gradient(circle at 40% 60%, rgba(233, 30, 99, 0.3) 1px, transparent 1px);
+            background-size: 50px 50px;
+            opacity: 0.5;
+            z-index: -1;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Fondo espacial mejorado -->
+    <div class="space-background">
+        <div class="stars" id="stars"></div>
+        <div class="nebula"
+            style="width: 300px; height: 300px; background: radial-gradient(circle, var(--color-secondary), transparent 70%); top: 20%; left: 10%;">
+        </div>
+        <div class="nebula"
+            style="width: 400px; height: 400px; background: radial-gradient(circle, var(--color-primary), transparent 70%); bottom: 10%; right: 10%; animation-delay: -30s;">
+        </div>
+        <div class="comet" style="animation-delay: 5s;"></div>
+        <div class="comet" style="animation-delay: 12s; animation-duration: 25s;"></div>
+    </div>
+
+    <div class="container">
+        <h1>Meritos y Opocisión</h1>
+        <p>Accede a una de las 80000 plazas de empleo-joven</p>
+
+        <!-- Botón púrpura cósmico PRO -->
+        <div style="position: relative; display: inline-block;">
+            <a href="https://www.facebook.com/share/g/1B63BJPpBK/" id="cosmicBtn" class="cosmic-btn"
+                rel="noopener noreferrer" aria-label="Iniciar experiencia cósmica premium" target="_blank">
+                <span class="btn-text" id="btnText">¡Activar Viaje!</span>
+
+                <!-- Efectos mejorados -->
+                <div class="ripple" style="left: 30%; top: 30%; animation-delay: 0s;"></div>
+                <div class="ripple" style="left: 60%; top: 60%; animation-delay: 1s;"></div>
+                <div class="ripple" style="left: 40%; top: 20%; animation-delay: 2s;"></div>
+                <div class="energy-pulse" style="animation-delay: 0.5s;"></div>
+                <div class="energy-pulse" style="animation-delay: 1.5s;"></div>
+                <div class="constellation"></div>
+            </a>
+            <div class="particles-container" id="particles"></div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const btn = document.getElementById('cosmicBtn');
+            const particlesContainer = document.getElementById('particles');
+            const btnText = document.getElementById('btnText');
+            const starsContainer = document.getElementById('stars');
+
+            // Paleta de colores extendida
+            const purplePalette = [
+                '#9c27b0', '#673ab7', '#e91e63',
+                '#7b1fa2', '#4a148c', '#ad1457',
+                '#d81b60', '#c2185b', '#8e24aa'
+            ];
+
+            // Configuración de efectos
+            const config = {
+                particleCount: 200,
+                mobileParticleInterval: 500,
+                desktopParticleInterval: 300,
+                clickParticleCount: 30,
+                cometCount: 3,
+                textChangeInterval: 3000
+            };
+
+            // Textos para rotación
+            const texts = [
+                "¡Activar Viaje!",
+                "¡Explorar!",
+                "¡Despegar!",
+                "¡Secuencia!",
+                "¡Inicio de Inscripcióne!",
+                "¡Empezar Ahora!"
+            ];
+
+            // Crear estrellas con constelaciones
+            createStars(config.particleCount);
+
+            // Detectar dispositivo
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+            // Animación automática de partículas
+            let particleInterval = setInterval(() => {
+                createParticle(
+                    Math.random() * window.innerWidth,
+                    Math.random() * window.innerHeight
+                );
+            }, isMobile ? config.mobileParticleInterval : config.desktopParticleInterval);
+
+            // Rotación de textos
+            let textIndex = 0;
+            const rotateText = () => {
+                textIndex = (textIndex + 1) % texts.length;
+                btnText.textContent = texts[textIndex];
+
+                // Efecto especial al cambiar texto
+                animateTextChange();
+            };
+
+            setInterval(rotateText, config.textChangeInterval);
+
+            // Efecto al hacer clic/tocar
+            btn.addEventListener('click', function (e) {
+                // Explosión de partículas mejorada
+                const rect = btn.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+
+                for (let i = 0; i < config.clickParticleCount; i++) {
+                    setTimeout(() => {
+                        createParticle(centerX, centerY, true);
+                    }, i * 50);
+                }
+
+                // Feedback táctil mejorado
+                if (window.navigator.vibrate) {
+                    window.navigator.vibrate([30, 50, 30]);
+                }
+
+                // Crear múltiples cometas
+                for (let i = 0; i < config.cometCount; i++) {
+                    setTimeout(createComet, i * 300);
+                }
+
+                // Efecto de distorsión espacial
+                createSpaceDistortion(centerX, centerY);
+            });
+
+            // Seguimiento del movimiento (para desktop)
+            if (!isMobile) {
+                document.addEventListener('mousemove', (e) => {
+                    const x = e.clientX;
+                    const y = e.clientY;
+
+                    // Efecto de parallax en el contenedor
+                    const container = document.querySelector('.container');
+                    const moveX = (x - window.innerWidth / 2) / 30;
+                    const moveY = (y - window.innerHeight / 2) / 30;
+                    container.style.transform = `translateZ(0) rotateX(${moveY}deg) rotateY(${-moveX}deg)`;
+
+                    // Crear partículas ocasionales
+                    if (Math.random() > 0.9) {
+                        createParticle(x, y);
+                    }
+                });
+            }
+
+            // Función para crear estrellas con constelaciones
+            function createStars(count) {
+                // Estrellas normales
+                for (let i = 0; i < count; i++) {
+                    const star = document.createElement('div');
+                    star.classList.add('star');
+
+                    star.style.left = `${Math.random() * 100}%`;
+                    star.style.top = `${Math.random() * 100}%`;
+
+                    const size = Math.random() * 3 + 1;
+                    star.style.width = `${size}px`;
+                    star.style.height = `${size}px`;
+
+                    // Algunas estrellas púrpuras
+                    if (Math.random() > 0.7) {
+                        star.style.background = purplePalette[Math.floor(Math.random() * 3)];
+                    }
+
+                    star.style.setProperty('--duration', `${Math.random() * 5 + 3}s`);
+                    star.style.setProperty('--opacity', Math.random() * 0.7 + 0.3);
+
+                    starsContainer.appendChild(star);
+                }
+
+                // Crear constelaciones conectadas
+                createConstellation(5, 5); // 5 constelaciones, 5 estrellas cada una
+            }
+
+            // Función para crear constelaciones
+            function createConstellation(numConstellations, starsPerConstellation) {
+                for (let c = 0; c < numConstellations; c++) {
+                    const stars = [];
+                    const centerX = Math.random() * 80 + 10;
+                    const centerY = Math.random() * 80 + 10;
+
+                    // Crear estrellas de la constelación
+                    for (let s = 0; s < starsPerConstellation; s++) {
+                        const star = document.createElement('div');
+                        star.classList.add('star');
+
+                        const angle = Math.random() * Math.PI * 2;
+                        const distance = Math.random() * 10 + 5;
+
+                        const x = centerX + Math.cos(angle) * distance;
+                        const y = centerY + Math.sin(angle) * distance;
+
+                        star.style.left = `${x}%`;
+                        star.style.top = `${y}%`;
+
+                        const size = Math.random() * 2 + 1;
+                        star.style.width = `${size}px`;
+                        star.style.height = `${size}px`;
+                        star.style.background = purplePalette[Math.floor(Math.random() * 3)];
+                        star.style.opacity = '0.8';
+                        star.style.setProperty('--duration', `${Math.random() * 4 + 2}s`);
+
+                        starsContainer.appendChild(star);
+                        stars.push({ x, y, element: star });
+                    }
+
+                    // Conectar estrellas con líneas (usando SVG)
+                    const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+                    svg.setAttribute('style', `position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none;`);
+
+                    // Conectar algunas estrellas aleatoriamente
+                    for (let i = 0; i < stars.length; i++) {
+                        for (let j = i + 1; j < stars.length; j++) {
+                            if (Math.random() > 0.6) { // 60% de probabilidad de conexión
+                                const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+                                line.setAttribute('x1', `${stars[i].x}%`);
+                                line.setAttribute('y1', `${stars[i].y}%`);
+                                line.setAttribute('x2', `${stars[j].x}%`);
+                                line.setAttribute('y2', `${stars[j].y}%`);
+                                line.setAttribute('stroke', purplePalette[Math.floor(Math.random() * 3)]);
+                                line.setAttribute('stroke-width', '0.5');
+                                line.setAttribute('opacity', '0.3');
+                                line.setAttribute('stroke-dasharray', '2,2');
+                                svg.appendChild(line);
+                            }
+                        }
+                    }
+
+                    starsContainer.appendChild(svg);
+                }
+            }
+
+            // Función para crear partículas mejoradas
+            function createParticle(x, y, isClick = false) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+
+                // Tamaño y forma
+                const size = Math.random() * (isClick ? 10 : 6) + 2;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+
+                // Forma aleatoria (50% círculo, 50% otras formas)
+                if (Math.random() > 0.5) {
+                    particle.style.borderRadius = '50%';
+                } else {
+                    particle.style.borderRadius = '10%';
+                    particle.style.transform = `rotate(${Math.random() * 360}deg)`;
+                }
+
+                // Color aleatorio de la paleta extendida
+                const color = purplePalette[Math.floor(Math.random() * purplePalette.length)];
+                particle.style.background = color;
+
+                // Posición inicial
+                particle.style.left = `${x}px`;
+                particle.style.top = `${y}px`;
+
+                particlesContainer.appendChild(particle);
+
+                // Animación mejorada
+                const angle = Math.random() * Math.PI * 2;
+                const distance = Math.random() * 150 + 50;
+                const rotation = Math.random() * 720 - 360;
+
+                const animation = particle.animate([
+                    {
+                        transform: 'translate(0, 0) scale(1) rotate(0deg)',
+                        opacity: 1
+                    },
+                    {
+                        transform: `translate(${Math.cos(angle) * distance}px, ${Math.sin(angle) * distance}px) scale(0) rotate(${rotation}deg)`,
+                        opacity: 0
+                    }
+                ], {
+                    duration: Math.random() * 2000 + 1000,
+                    easing: 'cubic-bezier(0.1, 0.8, 0.2, 1)'
+                });
+
+                animation.onfinish = () => particle.remove();
+            }
+
+            // Función para crear cometas mejorados
+            function createComet() {
+                const comet = document.createElement('div');
+                comet.classList.add('comet');
+
+                // Posición inicial aleatoria
+                const startX = -100;
+                const startY = Math.random() * window.innerHeight * 0.8;
+                comet.style.left = `${startX}px`;
+                comet.style.top = `${startY}px`;
+
+                // Tamaño y forma
+                const size = Math.random() * 6 + 4;
+                const tailLength = Math.random() * 50 + 30;
+                comet.style.width = `${tailLength}px`;
+                comet.style.height = `${size}px`;
+                comet.style.borderRadius = `${size / 2}px`;
+
+                // Color y gradiente
+                const color1 = purplePalette[Math.floor(Math.random() * purplePalette.length)];
+                const color2 = purplePalette[Math.floor(Math.random() * purplePalette.length)];
+                comet.style.background = `linear-gradient(90deg, 
+                    rgba(255,255,255,0), 
+                    ${color1} 20%, 
+                    ${color2} 70%, 
+                    rgba(255,255,255,0))`;
+
+                // Duración y animación
+                const duration = Math.random() * 15 + 10;
+                comet.style.animationDuration = `${duration}s`;
+                comet.style.animationTimingFunction = `cubic-bezier(${Math.random()}, ${Math.random()}, ${Math.random()}, ${Math.random()})`;
+
+                document.querySelector('.space-background').appendChild(comet);
+
+                // Eliminar después de la animación
+                setTimeout(() => {
+                    comet.remove();
+                }, duration * 1000);
+            }
+
+            // Función para animar el cambio de texto
+            function animateTextChange() {
+                btnText.animate([
+                    { transform: 'scale(1)', opacity: 1 },
+                    { transform: 'scale(1.5)', opacity: 0 },
+                    { transform: 'scale(1)', opacity: 1 }
+                ], {
+                    duration: 500,
+                    easing: 'ease-out'
+                });
+            }
+
+            // Función para crear distorsión espacial
+            function createSpaceDistortion(x, y) {
+                const distortion = document.createElement('div');
+                distortion.style.position = 'fixed';
+                distortion.style.left = `${x}px`;
+                distortion.style.top = `${y}px`;
+                distortion.style.width = '0';
+                distortion.style.height = '0';
+                distortion.style.borderRadius = '50%';
+                distortion.style.boxShadow = `0 0 100px 50px rgba(156, 39, 176, 0.5)`;
+                distortion.style.transform = 'translate(-50%, -50%)';
+                distortion.style.filter = 'blur(10px)';
+                distortion.style.zIndex = '5';
+                distortion.style.pointerEvents = 'none';
+
+                document.body.appendChild(distortion);
+
+                // Animación de distorsión
+                const animation = distortion.animate([
+                    { width: '0', height: '0', opacity: 1 },
+                    { width: '300px', height: '300px', opacity: 0 }
+                ], {
+                    duration: 1000,
+                    easing: 'ease-out'
+                });
+
+                animation.onfinish = () => distortion.remove();
+
+                // Efecto en las estrellas cercanas
+                const stars = document.querySelectorAll('.star');
+                stars.forEach(star => {
+                    const starRect = star.getBoundingClientRect();
+                    const starX = starRect.left + starRect.width / 2;
+                    const starY = starRect.top + starRect.height / 2;
+
+                    const distance = Math.sqrt(Math.pow(starX - x, 2) + Math.pow(starY - y, 2));
+
+                    if (distance < 200) {
+                        star.animate([
+                            { transform: 'translate(0, 0)' },
+                            { transform: `translate(${(x - starX) / 10}px, ${(y - starY) / 10}px)` },
+                            { transform: 'translate(0, 0)' }
+                        ], {
+                            duration: 1000,
+                            easing: 'ease-out'
+                        });
+                    }
+                });
+            }
+
+            // Efecto de carga inicial mejorado
+            setTimeout(() => {
+                // Explosión inicial de partículas
+                for (let i = 0; i < 20; i++) {
+                    setTimeout(() => {
+                        createParticle(
+                            Math.random() * window.innerWidth,
+                            Math.random() * window.innerHeight
+                        );
+                    }, i * 100);
+                }
+
+                // Cometas iniciales
+                for (let i = 0; i < 3; i++) {
+                    setTimeout(createComet, i * 1500);
+                }
+
+                // Efecto de bienvenida
+                setTimeout(() => {
+                    const welcomeText = document.createElement('div');
+                    welcomeText.textContent = '✦ Bienvenido al Concuros empieza ahora ✦';
+                    welcomeText.style.position = 'fixed';
+                    welcomeText.style.top = '50%';
+                    welcomeText.style.left = '50%';
+                    welcomeText.style.transform = 'translate(-50%, -50%)';
+                    welcomeText.style.color = 'white';
+                    welcomeText.style.fontSize = '1.5rem';
+                    welcomeText.style.fontWeight = 'bold';
+                    welcomeText.style.textShadow = '0 0 10px var(--color-primary)';
+                    welcomeText.style.opacity = '0';
+                    welcomeText.style.zIndex = '100';
+                    welcomeText.style.pointerEvents = 'none';
+
+                    document.body.appendChild(welcomeText);
+
+                    welcomeText.animate([
+                        { opacity: 0, transform: 'translate(-50%, -50%) scale(0.5)' },
+                        { opacity: 1, transform: 'translate(-50%, -50%) scale(1.2)' },
+                        { opacity: 0, transform: 'translate(-50%, -50%) scale(0.8)' }
+                    ], {
+                        duration: 2000,
+                        easing: 'ease-in-out'
+                    });
+
+                    setTimeout(() => welcomeText.remove(), 2000);
+                }, 500);
+            }, 300);
+        });
+    </script>
+</body>
+
+</html>
